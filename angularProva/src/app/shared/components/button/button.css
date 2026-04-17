@@ -1,0 +1,7 @@
+.butao{
+    width: 100px; height: 30px; border: rgb(121, 112, 112) solid 1px; background-color: rgb(247, 189, 172); border-radius: 10px;
+}
+
+.butao:hover{
+    background-color: rgb(236, 217, 195);  
+}

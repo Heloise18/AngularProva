@@ -1,0 +1,117 @@
+Cannot destructure property 'pos' of 'file.referencedFiles[index]' as it is undefined. [plugin angular-compiler]
+
+    node_modules/typescript/lib/typescript.js:126740:9:
+      126740 │       ({ pos, end } = file.referencedFiles[index]);
+             ╵          ^
+
+    at getReferencedFileLocation (C:\Users\disrct\Desktop\ProvaAngular\WhatsApp\node_modules\typescript\lib\typescript.js:126740:10)
+    at fileIncludeReasonToDiagnostics (C:\Users\disrct\Desktop\ProvaAngular\WhatsApp\node_modules\typescript\lib\typescript.js:133580:31)
+    at processReason (C:\Users\disrct\Desktop\ProvaAngular\WhatsApp\node_modules\typescript\lib\typescript.js:130143:62)
+    at Array.forEach (<anonymous>)
+    at createDiagnosticExplainingFile (C:\Users\disrct\Desktop\ProvaAngular\WhatsApp\node_modules\typescript\lib\typescript.js:130095:42)
+    at C:\Users\disrct\Desktop\ProvaAngular\WhatsApp\node_modules\typescript\lib\typescript.js:130028:15
+    at Array.forEach (<anonymous>)
+    at Object.getCombinedDiagnostics (C:\Users\disrct\Desktop\ProvaAngular\WhatsApp\node_modules\typescript\lib\typescript.js:130024:78)
+    at getProgramDiagnostics (C:\Users\disrct\Desktop\ProvaAngular\WhatsApp\node_modules\typescript\lib\typescript.js:127993:57)
+    at getSemanticDiagnosticsForFile (C:\Users\disrct\Desktop\ProvaAngular\WhatsApp\node_modules\typescript\lib\typescript.js:128024:7)
+
+  This error came from the "onStart" callback registered here:
+
+    node_modules/@angular/build/src/tools/esbuild/angular/compiler-plugin.js:120:18:
+      120 │             build.onStart(async () => {
+          ╵                   ~~~~~~~
+
+    at setup (C:\Users\disrct\Desktop\ProvaAngular\WhatsApp\node_modules\@angular\build\src\tools\esbuild\angular\compiler-plugin.js:120:19)
+    at async handlePlugins (C:\Users\disrct\Desktop\ProvaAngular\WhatsApp\node_modules\esbuild\lib\main.js:1185:20)
+
+
+
+
+
+
+
+/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
+/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "module": "preserve"
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ]
+}
+
+
+
+
+
+npx tsc -p tsconfig.app.json --noEmit
+
+
+                This is not the tsc command you are looking for
+
+
+To get access to the TypeScript compiler, tsc, from the command line either:
+
+- Use npm install typescript to first add TypeScript to your project before using npx
+- Use yarn to avoid accidentally running code from un-installed packages
+
+
+
+
+
+{
+  "name": "whats-app",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "packageManager": "npm@11.11.1",
+  "dependencies": {
+    "@angular/common": "^21.2.0",
+    "@angular/compiler": "^21.2.0",
+    "@angular/core": "^21.2.0",
+    "@angular/forms": "^21.2.0",
+    "@angular/platform-browser": "^21.2.0",
+    "@angular/router": "^21.2.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^21.2.7",
+    "@angular/cli": "^21.2.7",
+    "@angular/compiler-cli": "^21.2.0",
+    "jsdom": "^28.0.0",
+    "prettier": "^3.8.1",
+    "typescript": "~5.9.2",
+    "vitest": "^4.0.8"
+  }
+}

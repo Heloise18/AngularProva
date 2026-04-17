@@ -1,0 +1,11 @@
+export default class BaseService<T> {
+
+    protected headers : HttpHeaders = new HttpHeaders({
+        "Authorization" : sessionStorage.getItem('token')!
+    })
+
+    public post ( obj : T, token? : string, ) {
+        return this.client.post( `${this.endpoint}`, obj , {headers : this.headers}).pipe()
+    }
+
+}
